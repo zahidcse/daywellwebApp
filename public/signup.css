@@ -1,0 +1,100 @@
+/* Background container styling */
+.background-container {
+    background-color: #fff7f0; /* Light background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+}
+
+/* Form container styling */
+.form-container {
+    background-color: #ffffff; /* White background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 550px;
+    width: 100%;
+}
+
+/* Form title styling */
+.form-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 0;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #777777;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Welcome message styling */
+.welcome-message {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.wave-emoji {
+    font-size: 1.5rem;
+}
+
+.sub-message {
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+/* Input fields styling */
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9; /* Light gray input background */
+}
+
+/* Label styling */
+.form-label {
+    font-weight: bold;
+    color: #333333;
+    font-size: 0.85rem;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #FC9E29; /* DayWell's orange color */
+    border-color: #FC9E29;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+    background-color: #FC9E29;
+    border-color: #FC9E29;
+}
+
+/* Links styling */
+a {
+    color: #FC9E29;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+.form-footer {
+    font-size: 0.8rem;
+    color: #999999;
+    margin-top: 20px;
+}
