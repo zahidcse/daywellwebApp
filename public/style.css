@@ -94,6 +94,28 @@ body {
   color: var(--primary);
 }
 
+.feature-card-home{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 40px;
+    margin: 40px 0;
+    border-radius: 20px;
+    background: var(--light);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.feature-card-home p{
+    font-size: 1rem;
+    line-height: 1.3;
+    margin: 0px;
+    padding: 0px;
+}
+.feature-card-home img {
+  width: 60%;
+  border-radius: 15px;
+}
+
 .feature-card {
   display: grid;
   /* grid-template-columns: 1fr 1fr; */

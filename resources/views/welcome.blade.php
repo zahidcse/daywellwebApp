@@ -6,7 +6,7 @@
         <h2 class="features-section-text">Why Daywell is Unique</h2>
 
         <!-- Feature 1 -->
-        <div class="feature-card">
+        <div class="feature-card-home">
             <img class="unicq-section-f" src="images/how day well.webp" alt="Photo Tracking">
             <div class="feature-content">
                 <h3>Photo-Based Habit Tracking</h3>
@@ -15,7 +15,7 @@
         </div>
 
         <!-- Feature 2 -->
-        <div class="feature-card">
+        <div class="feature-card-home">
             <div class="feature-content">
                 <h3>Positive Reinforcement</h3>
                 <p>The app is designed to provide constant motivation through positive reinforcement. As users log their habits, they are encouraged to celebrate small wins and milestones visually. Whether it’s a fitness goal, a personal project, or a self-care routine.</p>
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Feature 3 -->
-        <div class="feature-card">
+        <div class="feature-card-home">
             <img class="unicq-section-t" src="{{ asset('images/last image.png') }}" alt="Custom Journals">
             <div class="feature-content">
                 <h3>Customizable Journals</h3>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <!-- Feature 4 -->
-        <div class="feature-card">
+        <div class="feature-card-home">
             <div class="feature-content">
                 <h3>Daily Vision Board Planning</h3>
                 <p>App helps you organize your day by setting clear goals and visualizing them. It provides tools to track activities like Move, Nourish, Learn, and Play, encouraging a balanced and mindful lifestyle.</p>
