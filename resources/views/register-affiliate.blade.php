@@ -17,7 +17,7 @@
         <h1 class="form-title">Daywell</h1>
         <p class="form-subtitle">Daywell's Affiliate Program</p>
         <p class="text-center form-description">
-            Join Daywell's Affiliate Program and receive a 10% commission on all payments for paying customers you refer to <a href="#">daywell.co</a>!
+            Join Daywell's Affiliate Program and receive a 10% commission on all payments for paying customers you refer to <a href="https://daywellapp.com/">daywellapp.com</a>!
         </p>
         <hr>
         @if ($errors->any())
