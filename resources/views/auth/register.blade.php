@@ -343,7 +343,7 @@
         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
-    <p>&copy; 2024, Daywell. All Rights Reserved.</p>
+    <p>&copy; 2025, Daywell. All Rights Reserved.</p>
   </footer>
 </body>
 </html>

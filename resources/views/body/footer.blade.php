@@ -22,7 +22,7 @@
             <a href="#"><i class="fab fa-tiktok"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
-        <p class="copyright">Copyright © 2024, Daywell. All Rights Reserved.</p>
+        <p class="copyright">Copyright © 2025, Daywell. All Rights Reserved.</p>
     </footer>
 </section>
 
