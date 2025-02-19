@@ -1,5 +1,5 @@
-
-@include('body.header')
+@extends('index')
+@section('content')
 <!-- Features Section -->
 <section class="features-section">
     <div class="container">
@@ -141,5 +141,4 @@
         </div>
     </div>
 </section>
-
-@include('body.footer')
+@endsection
