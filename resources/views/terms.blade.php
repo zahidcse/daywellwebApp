@@ -1,31 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DayWell - Terms & Conditions</title>
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
-</head>
-
-<body>
-
-    <!-- Header Section -->
-    <header class="main-header2">
-        <a href="{{ route('home') }}"><img src="{{ asset('images/Ahs Edu (21).png') }}" alt="Logo"
-                class="brand-logo"></a>
-    </header>
-
-    <!-- Features Section -->
+@extends('index')
+@section('content')
     <section class="features-section">
         <div class="container">
             <h2 class="features-section-text">Terms & Conditions</h2>
             <!-- Feature 1 -->
-            <div class="feature-card feature-content">
+            <div class="feature-card privacy-content">
                 <p>Effective Date: February 16, 2025 </p>
                 <h3>Introduction</h3>
                 <p>Welcome to Daywellapp.com! By using our website and/or using the services that are provided,
@@ -35,7 +14,7 @@
                     Terms and Conditions, you are prohibited from using this Website, and you may discontinue use
                     immediately. Daywellapp.com recommends that you save or print a copy of these Terms and
                     Conditions for future reference</p>
-                <div class="feature-content">
+                <div class="privacy-content">
                     <h3>Agreement to Terms and Conditions
                     </h3>
                     <p>Daywellapp.com Terms And Conditions (these "Terms" or these "Terms and Conditions")
@@ -291,4 +270,43 @@
             </div>
         </div>
     </section>
-    @include('body.footer')
+
+    <script>
+        /// ======================== partner popup script start =======================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get elements
+            const partnerBtn = document.getElementById('partnerBtn');
+            const partnerPopup = document.getElementById('partnerPopup');
+            const closeBtn = document.querySelector('.partner-popup-close');
+
+            // Show popup when button is clicked
+            if (partnerBtn) {
+                partnerBtn.addEventListener('click', function() {
+                    partnerPopup.style.display = 'flex';
+                });
+            }
+
+            // Close popup when X is clicked
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    partnerPopup.style.display = 'none';
+                });
+            }
+
+            // Close popup when clicking outside
+            if (partnerPopup) {
+                partnerPopup.addEventListener('click', function(e) {
+                    if (e.target === partnerPopup) {
+                        partnerPopup.style.display = 'none';
+                    }
+                });
+            }
+
+            // Removed the affiliate option click handler since it's now a direct link
+        });
+        // ======================== partner popup script end =======================
+    </script>
+@endsection
+
+
+

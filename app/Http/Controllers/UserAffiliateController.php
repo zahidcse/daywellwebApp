@@ -21,7 +21,7 @@ class UserAffiliateController extends Controller
 
     public function registerAffiliate(Request $request)
     {
-
+        dd($request->all());
         $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
@@ -44,14 +44,13 @@ class UserAffiliateController extends Controller
         Auth::guard('affiliate')->login($userAffiliate);
 
         return redirect()->route('dashboardAffiliate');
-
     }
 
     public function dashboardAffiliate()
     {
         $userAffiliate = Auth::guard('affiliate')->user();
-        $leads = User::where('referral_code',$userAffiliate->referral_code)->count();
-        return view('dashboard.affiliate',compact('userAffiliate','leads'));
+        $leads = User::where('referral_code', $userAffiliate->referral_code)->count();
+        return view('dashboard.affiliate', compact('userAffiliate', 'leads'));
     }
 
     public function loginAffiliate(Request $request)
@@ -75,7 +74,7 @@ class UserAffiliateController extends Controller
             'email' => 'required|email',
             'message' => 'required|string|max:2000',
         ]);
-        
+
         $name = (string) $request->name;
         $email = (string) $request->email;
         $usermessage = (string) $request->message;

@@ -20,6 +20,8 @@ Route::get('/registration-successful', function () { return view('registration-s
 Route::get('/privacy', function(){ return view('privacy'); })->name('privacy');
 Route::get('/terms', function(){ return view('terms'); })->name('terms');
 Route::get('/contact', function(){ return view('contact'); })->name('contact');
+Route::get('/refer-a-friend', function(){ return view('refer-friend'); })->name('referFriend');
+Route::get('/join-affiliate', function(){ return view('join-affiliate'); })->name('joinAffiliate');
 Route::post('/send-msg', [UserAffiliateController::class, 'contactUsSendMsg'])->name('contactUsSendMsg');
 Route::get('/register-affiliate', [UserAffiliateController::class, 'registerForm'])->name('register-affiliate');
 Route::post('/register-affiliate', [UserAffiliateController::class, 'registerAffiliate'])->name('registerAffiliate');

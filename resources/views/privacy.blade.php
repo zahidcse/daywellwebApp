@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('index')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DayWell - Privacy</title>
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
-</head>
-
-<body>
-
-    <!-- Header Section -->
-    <header class="main-header2">
-        <a href="{{ route('home') }}"><img src="{{ asset('images/Ahs Edu (21).png') }}" alt="Logo"
-                class="brand-logo"></a>
-    </header>
-
+@section('content')
     <!-- Features Section -->
     <section class="features-section">
         <div class="container">
@@ -38,7 +19,7 @@
                     information will be collected, used, and disclosed as outlined in this Privacy Policy</p>
                 <p>If you do not agree to this privacy policy, please do not use our Services.
                 </p>
-                <div class="feature-content">
+                <div class="privacy-content">
                     <h3>Our Principles</h3>
                     <p>Daywell has designed this policy to be consistent with the following principles:
                     </p>
@@ -363,4 +344,39 @@
     </section>
 
 
-    @include('body.footer')
+    <script>
+        /// ======================== partner popup script start =======================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get elements
+            const partnerBtn = document.getElementById('partnerBtn');
+            const partnerPopup = document.getElementById('partnerPopup');
+            const closeBtn = document.querySelector('.partner-popup-close');
+
+            // Show popup when button is clicked
+            if (partnerBtn) {
+                partnerBtn.addEventListener('click', function() {
+                    partnerPopup.style.display = 'flex';
+                });
+            }
+
+            // Close popup when X is clicked
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    partnerPopup.style.display = 'none';
+                });
+            }
+
+            // Close popup when clicking outside
+            if (partnerPopup) {
+                partnerPopup.addEventListener('click', function(e) {
+                    if (e.target === partnerPopup) {
+                        partnerPopup.style.display = 'none';
+                    }
+                });
+            }
+
+            // Removed the affiliate option click handler since it's now a direct link
+        });
+        // ======================== partner popup script end =======================
+    </script>
+@endsection

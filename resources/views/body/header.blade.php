@@ -1,40 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DayWell - Modern Habit Tracker</title>
-    <!-- Bootstrap 5 -->
+    <title>Daywell App — Snap. Track. Achieve</title>
+    <link rel="shortcut icon" href="{{ asset('assets/images/daywell favicon.png') }}" type="image/x-icon">
+    <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('style2.css') }}"> --}}
+
+
 </head>
+
 <body>
+    <!-- Header Section -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid px-0"> <!-- Removed default padding -->
+                    <a class="navbar-brand me-5" href="{{ route('home') }}"> <!-- Increased right margin -->
+                        <img src="{{ asset('assets/images/Daywell App logo.png') }}" class="logo"
+                            alt="Daywell App Logo">
+                    </a>
 
-<!-- Header Section -->
-<header class="main-header">
-    <a href="{{ route('home') }}"><img src="{{ asset('images/Ahs Edu (21).png') }}" alt="Logo" class="brand-logo"></a>
-    <div class="container">
-        <div class="hero-content">
-            <h1 class="hero-heading">Daily Habit Photo Journal & Tracker</h1>
-            <p class="lead">Sign Up Now for Exclusive Early Access</p>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                        aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
 
-            <div class="app-badges mt-4">
-                <a href="#"><img src="{{ asset('images/image play1.webp') }}" alt="Google Play"></a>
-                <a href="#"><img src="{{ asset('images/image play2.webp') }}" alt="App Store"></a>
-            </div>
-
-            <div class="cta-buttons mt-5">
-                <a href="{{ route('register') }}" class="btn btn-dark btn-lg">Sign Up Free</a>
-                <a href="{{ route('register-affiliate') }}" class="btn btn-outline-light btn-lg">Become Affiliate</a>
-            </div>
-
-            <div class="phone-mockups">
-                <img src="{{ asset('images/mobile image 1.webp') }}" alt="App Preview 1">
-                <img src="{{ asset('images/centre.png') }}" alt="App Preview 2">
-                <img src="{{ asset('images/mobile image another 3.webp') }}" alt="App Preview 3">
-            </div>
+                    <div class="collapse navbar-collapse" id="mainMenu">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-4"> <!-- Added left padding -->
+                            <li class="nav-item pe-4"> <!-- Added right padding -->
+                                <a class="nav-link active" href="{{ route('home') }}">Home</a>
+                            </li>
+                            <li class="nav-item pe-4">
+                                <a class="nav-link" href="{{ route('privacy') }}">Privacy</a>
+                            </li>
+                            <li class="nav-item pe-4">
+                                <a class="nav-link" href="{{ route('terms') }}">Terms</a>
+                            </li>
+                            <li class="nav-item pe-4">
+                                <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="header-buttons d-flex gap-3">
+                            <button class="btn btn-primary-custom btn-custom" onclick="openCustomPopup()">Sign Up for
+                                Early Access</button>
+                            <button class="btn btn-outline-custom btn-custom" id="partnerBtn">Partner with
+                                Daywell</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </div>
-</header>
+    </header>
