@@ -23,8 +23,11 @@ class UserAffiliateController extends Controller
     {
         dd($request->all());
         $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
+            'full_name' => 'required|string|max:255',
+            'organization_name' => 'required|string|max:255',
+            'organization_type' => 'required',
+            'website' => 'nullable',
+            'interest' => 'nullable',
             'email' => 'required|email|unique:user_affiliates,email',
             'password' => 'required|min:8|confirmed',
         ]);
