@@ -284,7 +284,20 @@
 
             <form id="affiliateForm" action="{{ route('registerAffiliate') }}" method="POST">
                 @csrf
-
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li style="margin-left: 20px;">{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="form-group half-width">
                     <label for="full-name">Full Name</label>
                     <div class="input-wrapper">
@@ -327,11 +340,11 @@
                 <div class="form-group">
                     <label for="org-type">Organization Type</label>
                     <select name="organization_type" id="org-type" class="form-input organizationType" required>
-                        <option value="1">Health Organization</option>
-                        <option value="2">Gym or Fitness Center</option>
-                        <option value="3">College or University</option>
-                        <option value="4">Blogger or Content Creator</option>
-                        <option value="5">Other</option>
+                        <option value="health">Health Organization</option>
+                        <option value="gym">Gym or Fitness Center</option>
+                        <option value="college">College or University</option>
+                        <option value="blogger">Blogger or Content Creator</option>
+                        <option value="other">Other</option>
                     </select>
                 </div>
 
@@ -349,22 +362,22 @@
                     <div class="checkbox-group">
                         <label class="checkbox-item">
                             Launching a Community Challenge
-                            <input type="checkbox" name="interest[]" value="community-challenge">
+                            <input type="checkbox" name="interested_in[]" value="community-challenge">
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-item">
                             Brand Partnership
-                            <input type="checkbox" name="interest[]" value="brand-partnership">
+                            <input type="checkbox" name="interested_in[]" value="brand-partnership">
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-item">
                             Referral Link & Commissions
-                            <input type="checkbox" name="interest[]" value="referral">
+                            <input type="checkbox" name="interested_in[]" value="referral">
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-item">
                             Embedding Daywell in Programs
-                            <input type="checkbox" name="interest[]" value="embedding">
+                            <input type="checkbox" name="interested_in[]" value="embedding">
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -374,22 +387,6 @@
                     <label for="goals">Tell us more about your goals (optional)</label>
                     <textarea id="goals" name="goals"
                         placeholder="Tell us more about your goals (e.g. Help students track mental health habits during finals week, Run 'Move 5 Minutes a Day' campaign for members, Help patients track meals and hydration to support heart health)"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="password" name="password" placeholder="********" class="form-input"
-                            required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="password_confirmation">Confirm Password</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="password_confirmation" name="password_confirmation"
-                            placeholder="********" class="form-input" required>
-                    </div>
                 </div>
 
                 <button type="submit" class="submit-btn">Send application</button>

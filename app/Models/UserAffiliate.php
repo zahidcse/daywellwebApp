@@ -12,10 +12,17 @@ class UserAffiliate extends Authenticatable
     protected $table = 'user_affiliates';
 
     protected $fillable = [
-        'first_name',
-        'last_name',
+        // 'first_name',
+        // 'last_name',
+        'full_name',
+        'organization_name',
+        'website',
+        'organization_type',
+        'community_size',
+        'interested_in',
+        'goals',
         'email',
-        'password',
-        'referral_link',
+        // 'password',
+        // 'referral_link',
     ];
 }

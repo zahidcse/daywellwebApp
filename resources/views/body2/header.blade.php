@@ -28,7 +28,7 @@
             <div class="cta-buttons mt-5">
                 <a href="{{ route('register') }}" class="btn btn-dark btn-lg">Sign Up Free</a>
                 <a href="{{ route('register-affiliate') }}" class="btn btn-outline-light btn-lg">Become Affiliate</a>
-            </div>P
+            </div>
 
             <div class="phone-mockups">
                 <img src="{{ asset('images/mobile image 1.webp') }}" alt="App Preview 1">

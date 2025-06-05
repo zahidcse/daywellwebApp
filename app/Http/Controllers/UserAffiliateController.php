@@ -21,32 +21,47 @@ class UserAffiliateController extends Controller
 
     public function registerAffiliate(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $request->validate([
             'full_name' => 'required|string|max:255',
-            'organization_name' => 'required|string|max:255',
-            'organization_type' => 'required',
-            'website' => 'nullable',
-            'interest' => 'nullable',
             'email' => 'required|email|unique:user_affiliates,email',
-            'password' => 'required|min:8|confirmed',
+            'organization_name' => 'required|string|max:255',
+            'website' => 'nullable|url',
+            'organization_type' => 'required|string|in:health,gym,college,blogger,other',
+            'community_size' => 'required|integer|min:1',
+            'interested_in' => 'required|array|min:1',
+            'goals' => 'nullable|string|max:1000',
         ]);
 
-        $userAffiliate = UserAffiliate::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'password' =>  Hash::make($request->password),
-        ]);
+
+        $affiliateUser = new UserAffiliate();
+        $affiliateUser->full_name = $request->full_name;
+        $affiliateUser->email = $request->email;
+        $affiliateUser->organization_name = $request->organization_name;
+        $affiliateUser->website = $request->website;
+        $affiliateUser->organization_type = $request->organization_type;
+        $affiliateUser->community_size = $request->community_size;
+        $affiliateUser->interested_id = json_encode($request->interested_in);
+        $affiliateUser->goals = $request->goals;
+        $affiliateUser->save();
+
+        return back()->with('success', 'Send Application successfully!');
+
+        // $userAffiliate = UserAffiliate::create([
+        //     'first_name' => $request->first_name,
+        //     'last_name' => $request->last_name,
+        //     'email' => $request->email,
+        //     'password' =>  Hash::make($request->password),
+        // ]);
 
 
-        $userAffiliate->referral_link = 'http://127.0.0.1:8000' . '/register?via=' . $userAffiliate->first_name . $userAffiliate->id;
-        $userAffiliate->referral_code = $userAffiliate->first_name . $userAffiliate->id;
-        $userAffiliate->save();
+        // $userAffiliate->referral_link = 'http://127.0.0.1:8000' . '/register?via=' . $userAffiliate->first_name . $userAffiliate->id;
+        // $userAffiliate->referral_code = $userAffiliate->first_name . $userAffiliate->id;
+        // $userAffiliate->save();
 
-        Auth::guard('affiliate')->login($userAffiliate);
+        // Auth::guard('affiliate')->login($userAffiliate);
 
-        return redirect()->route('dashboardAffiliate');
+        // return redirect()->route('dashboardAffiliate');
     }
 
     public function dashboardAffiliate()
