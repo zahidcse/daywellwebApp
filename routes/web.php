@@ -32,4 +32,3 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
 Route::middleware('auth:affiliate')->group(function () {
     Route::get('/dashboard-affiliate', [UserAffiliateController::class, 'dashboardAffiliate'])->name('dashboardAffiliate');
 });
-

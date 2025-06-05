@@ -21,8 +21,8 @@
     <header class="header" id="header">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid px-0"> <!-- Removed default padding -->
-                    <a class="navbar-brand me-5" href="{{ route('home') }}"> <!-- Increased right margin -->
+                <div class="container-fluid px-0">
+                    <a class="navbar-brand me-5" href="{{ route('home') }}">
                         <img src="{{ asset('assets/images/Daywell App logo.png') }}" class="logo"
                             alt="Daywell App Logo">
                     </a>
@@ -33,8 +33,8 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="mainMenu">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-4"> <!-- Added left padding -->
-                            <li class="nav-item pe-4"> <!-- Added right padding -->
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-4">
+                            <li class="nav-item pe-4">
                                 <a class="nav-link active" href="{{ route('home') }}">Home</a>
                             </li>
                             <li class="nav-item pe-4">
